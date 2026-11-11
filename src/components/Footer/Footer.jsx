@@ -4,8 +4,8 @@ import visa from "../../assets/footer/visa.png";
 import mastercard from "../../assets/footer/mastercard.png";
 import maestro from "../../assets/footer/maestro.png";
 import amex from "../../assets/footer/amex.png";
-import rupay from "../../assets/footer/rupay.jpg";
-import googlePlay from "../../assets/footer/google-play.png";
+import rupay from "../../assets/footer/RuPay.jpg";
+import googlePlay from "../../assets/footer/Google-Play.png";
 import appStore from "../../assets/footer/app-store.png";
 
 import {
