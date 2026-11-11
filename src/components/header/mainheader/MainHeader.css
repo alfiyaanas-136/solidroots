@@ -1,0 +1,88 @@
+.main-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 30px 4.3%;
+    background-color: #ffffff;
+}
+.header-logo{
+    flex-shrink: 0;
+}
+.header-logo h1{
+    font-size: 38px;
+    font-weight: 700;
+    color: #333333;
+    white-space: nowrap;
+}
+
+.header-search {
+  flex: 1;
+  max-width: 625px;
+  margin: 0 auto;
+  position: relative;
+  right: 20px;
+}
+.header-search input {
+  width: 80%;
+  height: 46px;
+  padding: 0 20px;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  font-size: 14px;
+  outline: none;
+  padding-right: 55px;
+  margin-left: 79px;
+  padding-top: 6px;
+}
+.search-icon{
+    position: absolute;
+    right: 54px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5c5a5a;
+    cursor: pointer;
+}
+.header-actions{
+    display: flex;
+    align-items: center;
+    gap: 29px;
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+.header-actions span{
+    color: #333333;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.header-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.header-action svg {
+  color: #333333;
+}
+.header-action span {
+  font-size: 13px;
+  color: #333333;
+  white-space: nowrap;
+  font-weight: 400;
+}
+.header-action .action-icon {
+  /* width: 28px; */
+  height: 28px;
+  stroke-width: 1;
+  color: #333;
+}
+
+.stores-action .action-icon {
+  color: #f36b21;
+}

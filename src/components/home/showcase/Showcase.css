@@ -1,0 +1,370 @@
+
+/* =====================================
+   SOLIDROOTS HOME SHOWCASE
+===================================== */
+
+.home-showcase {
+    width: 96%;
+    margin: 28px auto 70px;
+    box-sizing: border-box;
+}
+
+/* =====================================
+   MAIN BANNER
+===================================== */
+
+.showcase-main {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.showcase-main > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2.27 / 1;
+    object-fit: cover;
+}
+
+.showcase-main::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.6),
+        transparent 48%
+    );
+    pointer-events: none;
+}
+
+.showcase-main-content {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+}
+
+.showcase-main-content h2 {
+    font-size: 23px;
+    font-weight: 400;
+    margin: 0;
+    color: #fff;
+}
+
+.showcase-main-content p {
+    font-size: 13px;
+    margin: 4px 0 15px;
+    color: #fff;
+}
+
+.showcase-main-content a {
+    color: #fff;
+    font-size: 13px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* =====================================
+   CATEGORY CAROUSEL
+===================================== */
+
+.showcase-carousel {
+    position: relative;
+    width: calc(100% - 50px);
+    margin: 20px auto 0;
+    box-sizing: border-box;
+}
+
+.showcase-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+
+    gap: 20px;
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.showcase-cards::-webkit-scrollbar {
+    display: none;
+}
+
+/* =====================================
+   INDIVIDUAL CATEGORY CARD
+===================================== */
+
+.showcase-card {
+    position: relative;
+    display: block;
+
+    flex: 0 0 37%;
+    width: 37%;
+    min-width: 0;
+
+    height: 200px;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    border-radius: 10px;
+
+    color: #fff;
+    text-decoration: none;
+
+    scroll-snap-align: start;
+}
+
+/* =====================================
+   CARD IMAGE
+===================================== */
+
+.showcase-card > img {
+    display: block;
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.showcase-card:hover > img {
+    transform: scale(1.03);
+}
+
+/* =====================================
+   CARD GRADIENT
+===================================== */
+
+.showcase-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.36) 0%,
+        rgba(0, 0, 0, 0.12) 45%,
+        transparent 85%
+    );
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* =====================================
+   CARD TEXT
+===================================== */
+
+.showcase-card-content {
+    position: absolute;
+    top: 20%;
+    left: 7%;
+    z-index: 2;
+
+    width: 60%;
+    max-width: 200px;
+
+    color: #fff;
+}
+
+.showcase-card-content h3 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    margin: 0 0 6px;
+    color: #fff;
+}
+
+.showcase-card-content p {
+    font-size: 11px;
+    line-height: 1.4;
+
+    max-width: 140px;
+    margin: 0 0 20px;
+
+    color: #fff;
+}
+
+.showcase-card-content span {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.showcase-card-content small {
+    display: inline-block;
+
+    padding: 4px 12px;
+    border-radius: 20px;
+
+    background: #fff;
+    color: #333;
+
+    font-size: 10px;
+    font-weight: 400;
+}
+
+
+/* =====================================
+   CAROUSEL ARROWS WITH FADE EFFECT
+===================================== */
+
+.showcase-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 0;
+
+    color: #555;
+    font-size: 26px;
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+}
+
+/* Previous arrow - fade from left to right */
+
+.showcase-prev {
+    left: 0;
+
+    /* background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 255, 255, 0.8) 35%,
+        rgba(255, 255, 255, 0.4) 70%,
+        rgba(255, 255, 255, 0) 100%
+    ); */
+}
+
+/* Next arrow - fade from right to left */
+
+.showcase-next {
+    right: 0;
+
+    /* background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 255, 255, 0.8) 35%,
+        rgba(255, 255, 255, 0.4) 70%,
+        rgba(255, 255, 255, 0) 100%
+    ); */
+}
+
+/* Hover */
+
+/* .showcase-arrow:hover {
+    color: #f36b21;
+} */
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1024px) {
+
+    .showcase-card {
+        flex-basis: 44%;
+        width: 44%;
+        height: 180px;
+    }
+
+    .showcase-cards {
+        gap: 16px;
+    }
+
+    .showcase-card-content h3 {
+        font-size: 18px;
+    }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .home-showcase {
+        width: 95%;
+    }
+
+    .showcase-main > img {
+        aspect-ratio: 1.5 / 1;
+    }
+
+    .showcase-main-content h2 {
+        font-size: 18px;
+    }
+
+    .showcase-carousel {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .showcase-cards {
+        gap: 12px;
+    }
+
+    .showcase-card {
+        flex-basis: 65%;
+        width: 65%;
+        height: 180px;
+    }
+
+    .showcase-card-content h3 {
+        font-size: 15px;
+    }
+
+    .showcase-arrow {
+        width: 32px;
+        height: 40px;
+    }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+
+    .showcase-main > img {
+        aspect-ratio: 1 / 1;
+    }
+
+    .showcase-card {
+        flex-basis: 85%;
+        width: 85%;
+        height: 190px;
+    }
+
+    .showcase-card-content h3 {
+        font-size: 16px;
+    }
+}

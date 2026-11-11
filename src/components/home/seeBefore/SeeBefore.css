@@ -1,0 +1,520 @@
+
+/* =====================================
+   SEE BEFORE YOU CHOOSE SECTION
+===================================== */
+
+.home-see-before {
+    width: 100%;
+    margin: 60px auto 80px;
+    padding: 0 3.2%;
+    box-sizing: border-box;
+    border-top: 1px solid #eee;
+}
+
+.home-see-before > h2 {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 300;
+    color: #222;
+    margin: 18px 0 32px;
+}
+
+/* =====================================
+   VIDEO CAROUSEL
+===================================== */
+
+.see-before-carousel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.see-before-carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.see-before-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* =====================================
+   VIDEO CARDS
+===================================== */
+
+.see-before-card {
+    position: relative;
+    flex: 0 0 calc((100% - 36px) / 4.6);
+    min-width: 0;
+    aspect-ratio: 9 / 16;
+
+    overflow: hidden;
+    border-radius: 5px;
+    background: #e8e2db;
+    cursor: pointer;
+    scroll-snap-align: start;
+}
+
+.see-before-card video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Bottom fade overlay */
+
+.see-before-card::after {
+    content: '';
+    position: absolute;
+    inset: 55% 0 0;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0, 0, 0, 0.8)
+    );
+
+    pointer-events: none;
+}
+
+/* =====================================
+   PRODUCT NAME AND ARROW
+===================================== */
+
+.see-before-card-footer {
+    position: absolute;
+    bottom: 15px;
+    left: 18px;
+    right: 18px;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.see-before-card-footer span {
+    flex: 1;
+    min-width: 0;
+
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.see-before-card-footer button {
+    flex-shrink: 0;
+
+    width: 31px;
+    height: 31px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    color: #222;
+
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.see-before-card-footer button:hover {
+    background: #f36b21;
+    color: #fff;
+}
+
+/* =====================================
+   CAROUSEL NAVIGATION
+===================================== */
+
+.see-before-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ccc;
+    border-radius: 50%;
+
+    background: #fff;
+    color: #333;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.see-before-prev {
+    left: 10px;
+}
+
+.see-before-next {
+    right: 10px;
+}
+
+.see-before-nav:hover {
+    background: #f36b21;
+    border-color: #f36b21;
+    color: #fff;
+}
+
+/* =====================================
+   MODAL OVERLAY
+===================================== */
+
+.see-before-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.65);
+}
+
+/* =====================================
+   MODAL CONTENT
+===================================== */
+
+.see-before-modal {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 24px;
+
+    width: 100%;
+    max-width: 960px;
+    max-height: calc(100vh - 48px);
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    background: #fff;
+    border-radius: 10px;
+
+    overflow-y: auto;
+}
+
+.see-before-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #fff;
+    color: #333;
+
+    cursor: pointer;
+}
+
+/* Product image */
+
+.see-before-modal-image {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f6f3;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.see-before-modal-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 625px;
+    object-fit: contain;
+}
+
+/* Product details */
+
+.see-before-modal-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-width: 0;
+
+    padding-bottom: 25px;
+}
+
+.see-before-modal-thumbnail {
+    display: block;
+    width: 100%;
+    height: 310px;
+
+    object-fit: cover;
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+}
+
+.see-before-modal-details h3 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    color: #222;
+    margin: 0 0 16px;
+}
+
+/* Prices */
+
+.see-before-price-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.see-before-price-row strong {
+    font-size: 23px;
+    font-weight: 500;
+    color: #222;
+}
+
+.see-before-price-row del {
+    font-size: 15px;
+    color: #888;
+}
+
+.see-before-price-row span {
+    font-size: 15px;
+    color: #39a852;
+}
+
+/* Buttons */
+
+.see-before-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.see-before-add-cart {
+    flex: 1;
+    min-height: 50px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #f36b21;
+    color: #fff;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.see-before-add-cart:hover {
+    background: #d95a13;
+}
+
+.see-before-view-details {
+    flex: 1;
+
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: 500;
+    color: #222;
+}
+
+.see-before-view-details:hover {
+    color: #f36b21;
+}
+
+
+/* =====================================
+   PRODUCT VIDEO HOVER TOOLTIP
+===================================== */
+
+.see-before-video-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 3;
+
+    padding: 6px 10px;
+    background: rgb(55, 54, 54);
+    color: white;
+    border: 1px solid #fff;
+    border-radius: 2px;
+
+    font-size: 13px;
+    font-weight: 300;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0s linear 0.2s;
+}
+
+/* Show tooltip after 1.5 seconds */
+
+.see-before-card:hover .see-before-video-tooltip {
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.2s ease 1.5s,
+        visibility 0s linear 1.5s;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1024px) {
+
+    .see-before-card {
+        flex-basis: calc((100% - 24px) / 3.3);
+    }
+
+    .home-see-before > h2 {
+        font-size: 29px;
+    }
+
+    .see-before-modal-thumbnail {
+        height: 230px;
+    }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .home-see-before {
+        padding: 0 4%;
+        margin: 40px auto 60px;
+    }
+
+    .home-see-before > h2 {
+        font-size: 24px;
+        margin-bottom: 22px;
+    }
+
+    .see-before-card {
+        flex-basis: 48%;
+    }
+
+    .see-before-card-footer {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .see-before-card-footer span {
+        font-size: 13px;
+    }
+
+    .see-before-nav {
+        width: 35px;
+        height: 35px;
+    }
+
+    .see-before-modal {
+        grid-template-columns: 1fr;
+        gap: 15px;
+
+        max-width: 440px;
+    }
+
+    .see-before-modal-image img {
+        max-height: 300px;
+    }
+
+    .see-before-modal-thumbnail {
+        display: none;
+    }
+
+    .see-before-modal-details {
+        padding-bottom: 5px;
+    }
+
+    .see-before-modal-details h3 {
+        font-size: 17px;
+    }
+
+    .see-before-price-row strong {
+        font-size: 20px;
+    }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+
+    .see-before-card {
+        flex-basis: 75%;
+    }
+
+    .see-before-modal-overlay {
+        padding: 12px;
+    }
+
+    .see-before-modal {
+        padding: 12px;
+    }
+
+    .see-before-modal-actions {
+        gap: 8px;
+    }
+
+    .see-before-add-cart,
+    .see-before-view-details {
+        font-size: 14px;
+    }
+}

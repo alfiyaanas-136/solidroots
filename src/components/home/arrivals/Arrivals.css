@@ -1,0 +1,438 @@
+/* ===================================
+   ARRIVALS SECTION
+=================================== */
+
+.home-arrivals {
+    width: 92%;
+    margin: 60px auto 80px;
+    box-sizing: border-box;
+}
+
+.home-arrivals h2 {
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
+    color: #222;
+    margin-bottom: 16px;
+    padding-top: 10px;
+}
+
+
+/* ===================================
+   CATEGORY TABS
+=================================== */
+
+.arrival-categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.arrival-tab {
+    background: transparent;
+    border: none;
+
+    padding: 5px 20px 13px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+
+    cursor: pointer;
+
+    border-bottom: 2px solid transparent;
+
+    transition: color 0.3s ease;
+}
+
+.arrival-tab.active {
+    color: #222;
+    border-bottom-color: #222;
+}
+
+.arrival-tab:hover {
+    color: #f36b21;
+}
+
+
+/* ===================================
+   PRODUCT CAROUSEL
+=================================== */
+
+.arrival-carousel {
+    position: relative;
+    width: 100%;
+}
+
+.arrival-products {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+
+/* ===================================
+   PRODUCT CARD
+=================================== */
+
+.arrival-card {
+    width: 100%;
+    min-width: 0;
+    background-color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+/* ===================================
+   PRODUCT IMAGE
+=================================== */
+
+.arrival-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+}
+
+.arrival-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 0.88;
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.arrival-card:hover .arrival-image img {
+    transform: scale(1.04);
+}
+
+
+/* ===================================
+   WISHLIST BUTTON
+=================================== */
+
+.arrival-wishlist {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+
+    color: #555;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.arrival-wishlist:hover {
+    color: #f36b21;
+    background-color: #fff;
+}
+
+.arrival-wishlist.wishlisted {
+    color: #f36b21;
+}
+
+
+/* ===================================
+   PRODUCT INFORMATION
+=================================== */
+
+.arrival-product-info {
+    padding: 15px 5px 20px;
+}
+
+.arrival-product-name {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333;
+
+    margin: 0 0 10px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    line-clamp: 2;
+    overflow: hidden;
+
+    min-height: 51px;
+}
+
+
+/* ===================================
+   RATINGS
+=================================== */
+
+.arrival-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 12px;
+}
+
+.arrival-stars {
+    position: relative;
+    display: inline-block;
+
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+.arrival-stars-empty {
+    color: #ddd;
+}
+
+.arrival-stars-filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    color: #f5a623;
+}
+
+.arrival-reviews {
+    font-size: 15px;
+    color: #777;
+}
+
+
+/* ===================================
+   PRICES
+=================================== */
+
+.arrival-price {
+    font-size: 24px;
+    font-weight: 500;
+    color: #222;
+
+    margin: 0 0 6px;
+}
+
+.arrival-discount {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.arrival-discount del {
+    font-size: 15px;
+    color: #888;
+}
+
+.arrival-discount span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #39a852;
+}
+
+
+/* ===================================
+   CAROUSEL ARROWS
+=================================== */
+
+.arrival-arrow {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #fff;
+    color: #444;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+
+    cursor: pointer;
+    z-index: 5;
+
+    transition: background-color 0.3s ease;
+}
+
+.arrival-arrow:hover {
+    background-color: #f36b21;
+    color: #fff;
+}
+
+.arrival-prev {
+    left: -18px;
+}
+
+.arrival-next {
+    right: -18px;
+}
+
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 1024px) {
+
+    .home-arrivals {
+        width: 94%;
+    }
+
+    .arrival-categories {
+        gap: 20px;
+    }
+
+    .arrival-tab {
+        font-size: 16px;
+        padding: 10px 12px 15px;
+    }
+
+    .arrival-products {
+        gap: 12px;
+    }
+
+    .arrival-product-name {
+        font-size: 15px;
+    }
+
+    .arrival-price {
+        font-size: 21px;
+    }
+}
+
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 768px) {
+
+    .home-arrivals {
+        width: 95%;
+        margin: 40px auto 60px;
+    }
+
+    .home-arrivals h2 {
+        font-size: 24px;
+    }
+
+    .arrival-categories {
+        justify-content: flex-start;
+        gap: 10px;
+
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .arrival-categories::-webkit-scrollbar {
+        display: none;
+    }
+
+    .arrival-tab {
+        flex-shrink: 0;
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .arrival-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .arrival-card:nth-child(3) {
+        display: none;
+    }
+
+    .arrival-product-name {
+        font-size: 14px;
+        min-height: 42px;
+    }
+
+    .arrival-stars {
+        font-size: 16px;
+    }
+
+    .arrival-reviews {
+        font-size: 12px;
+    }
+
+    .arrival-price {
+        font-size: 19px;
+    }
+
+    .arrival-discount {
+        gap: 6px;
+    }
+
+    .arrival-discount del,
+    .arrival-discount span {
+        font-size: 12px;
+    }
+
+    .arrival-arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .arrival-prev {
+        left: -8px;
+    }
+
+    .arrival-next {
+        right: -8px;
+    }
+}
+
+
+/* ===================================
+   SMALL MOBILE
+=================================== */
+
+@media (max-width: 480px) {
+
+    .arrival-products {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .arrival-card:nth-child(2),
+    .arrival-card:nth-child(3) {
+        display: none;
+    }
+
+    .arrival-image img {
+        aspect-ratio: 1 / 0.8;
+    }
+
+    .arrival-product-info {
+        padding: 12px 5px;
+    }
+}

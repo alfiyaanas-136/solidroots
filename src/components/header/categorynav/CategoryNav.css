@@ -1,0 +1,278 @@
+.category-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px 4.3%;
+    /* background-color: #111111; */
+    background-color: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 14px;
+}
+.nav-item {
+  position: static;
+  cursor: pointer;
+}
+.category-nav span{
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.category-nav p{
+    color: #333333;
+    font-size: 14px;
+    cursor: pointer;
+}
+.category-nav > .nav-item:last-child > span {
+  color: #f36b21;
+  font-weight: 600;
+}
+
+.category-nav > .nav-item:last-child > span:hover {
+  color: #c94f10;
+}
+.category-nav span:last-child:hover{
+    color: #c94f10;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 4%;
+  width: 92%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 0;
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  z-index: 100;
+  height: auto;
+}
+.dropdown-menu a{
+    display: block;
+    padding: 12px 16px;
+    color: #333333;
+    font-size: 14px;
+    text-decoration: none;
+}
+.dropdown-menu a:hover{
+    /* background-color: #faf9f6; */
+    color: #f36b21;
+}
+.dropdown-column{
+    padding: 25px 18px;
+    border-right: 1px solid #eeeeee;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+.dropdown-column h4{
+    font-size: 16px;
+    font-weight: 500;
+    color: #111111;
+    margin-bottom: 5px;
+}
+.dropdown-section + .dropdown-section {
+  margin-top: 22px;
+}
+.dropdown-menu > .dropdown-column:nth-child(2) {
+  background-color: #f8f8f8;
+}
+.dropdown-menu > .dropdown-column:nth-child(4) {
+  background-color: #f8f8f8;
+}
+.dropdown-column a{
+    display: block;
+    padding: 4px 0;
+    font-size: 13px;
+    line-height: 1.25;
+    color: #444444;
+    text-decoration: none;
+    /* transition: color 0.2s ease, padding-left 0.2s ease; */
+}
+.dropdown-column a:hover {
+  color: #f36b21;
+  background-color: transparent;
+  /* padding-left: 5px; */
+}
+.dropdown-promotion {
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+}
+
+.dropdown-promotion img {
+  width: 100%;
+  height: 350px;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.category-nav > span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+    width: 100%;
+    height: 2px;
+    background-color: #f36b21;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+
+.nav-item {
+  position: static;
+  cursor: pointer;
+}
+
+.nav-item > span {
+  position: relative;
+  display: inline-block;
+  /* padding-bottom: 18px; */
+  /* margin-bottom: -18px; */
+}
+
+.nav-item > span::after {
+  content: "";
+  position: absolute;
+  left: 25px;
+  bottom: -18px;
+  width: 50%;
+  height: 1px;
+  background-color: #f36b21;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.nav-item:hover > span {
+  color: #f36b21;
+}
+
+.nav-item:hover > span::after {
+  transform: scaleX(1);
+}
+
+.nav-item:hover .dropdown-menu {
+  display: grid;
+}
+
+
+
+
+
+
+
+
+
+/* Section spacing */
+.dropdown-section + .dropdown-section {
+  margin-top: 18px;
+}
+
+/* Headings */
+.dropdown-section h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 6px;
+}
+
+/* Different number of columns */
+.nav-item:has(> span:first-child) .dropdown-menu {
+  column-gap: 0;
+}
+
+/* Bedroom: 5 columns */
+.nav-item:nth-child(3) .dropdown-menu {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+/* Dining: 4 columns */
+.nav-item:nth-child(5) .dropdown-menu {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Sofas, Mattress, Storage, Study & Office,
+   Outdoor, Decor & Furnishing: 3 text columns
+   plus an optional promotion column */
+.nav-item:nth-child(1) .dropdown-menu,
+.nav-item:nth-child(4) .dropdown-menu,
+.nav-item:nth-child(6) .dropdown-menu,
+.nav-item:nth-child(7) .dropdown-menu,
+.nav-item:nth-child(8) .dropdown-menu {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+
+/* Living dropdown */
+.nav-item:nth-child(2) .dropdown-column {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.nav-item:nth-child(2) .dropdown-column a {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  line-height: 1.2;
+}
+
+.nav-item:nth-child(2) .dropdown-section + .dropdown-section {
+  margin-top: 12px;
+}
+
+
+
+
+/* Interiors mega dropdown */
+
+.interiors-dropdown {
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 25px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.interiors-info h3 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 25px;
+  color: #222222;
+}
+
+.interiors-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.interiors-benefits p {
+  font-size: 14px;
+  color: #444444;
+}
+
+.interiors-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.interiors-card h4 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 12px;
+  color: #222222;
+}
